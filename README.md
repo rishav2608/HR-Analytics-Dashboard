@@ -1,91 +1,64 @@
-# Hospitality Domain Dashboard
+# HR Analytics Dashboard
+
+Welcome to the HR Analytics Dashboard project! This repository showcases an interactive Power BI dashboard designed to help organizations better understand employee attrition, workforce demographics, and related HR trends.
 
 
 ## Problem Statement
 
-A multi-national company owns multiple five-star hotels across India. They have been in the hospitality industry for the past 20 years. Due to strategic moves from other competitors and ineffective management decision-making, the company is losing its market share and revenue in the luxury/business hotels category. As a strategic move, the managing director of AtliQ Grands wanted to incorporate “Business and Data Intelligence” to regain their market share and revenue.
+Employee attrition is one of the biggest challenges for HR departments. Understanding **who is leaving, why, and from where** is key to improving employee retention and satisfaction.
 
+The goal of this dashboard is to:
+- Analyze attrition patterns across demographics, departments, and salary brackets
+- Provide a high-level and granular view of workforce composition
+- Support data-driven HR decisions for talent retention
 
-- #### Objective:
-
-  The objective of this case study is to develop a data-driven strategy that:
-
-        - Show the property details and take a decision based on that.
-
-        - Analyzes different trends and gives ideas for growth in revenue and bookings.
 
 ## Demo of the dashboard:
 
 ### Level 1: 
 Slicers and date filters are given using which we can filter the visuals based on
 
-	- City
-	- Room Class
-	- Category
-	- week
-	- year month
+	- Department
+	- Gender	
 
 ### Level 2: 
 Card visuals, column charts, pie charts, and line charts are used to show detailed trends.
 
 ##### 6 card visuals shows
 
-	-Revenue
-	-RevPAR
-	-DSRN
-	-Occupancy %
-	-ADR
-	-Realisation %
+	-Count of Employee
+	-Attrition
+	-Attrition Rate
+	-Average Age
+	-Average Salary
+	-Average Years
  
  ##### Column chart shows
 
- 	-Realisation % vs ADR by booking platform
+ 	-Attrition By Age
 
   ##### Pie chart shows
 
-  	-Revenue by category
+  	-Attrition By Education
 
    ##### Line chart shows
 
-   	-Trend comparison of RevPAR, ADR, and Occupancy % for every week.
+   	-Attrition by Years At company
 
 ### Level 3: 
-The Table visual is used to show individual property details. Another table visual shows numeric details based on weekdays and weekends. These visuals filter out based on the slicers.
+The Table visual displays attrition rates segmented by job role and job satisfaction levels, helping to identify patterns between employee satisfaction and turnover.
 
 ## Preparation of dataset:
 
 - The transformation and data cleaning is done in Power Query and then the data is loaded.
-- Multiple key measures are created.
+- Fields included: Age, Gender, Education, Job Role, Department, Monthly Income, Years at Company, and Attrition flag.
 
-  		-ADR = DIVIDE([Revenue],[Total Booking],0)
-  		-Avg rating = AVERAGE(fact_bookings[ratings_given])
-  		-Booking % by Platform = DIVIDE([Total Booking],CALCULATE([Total Booking],ALL(fact_bookings[booking_platform])))
-  		-Booking % by Room class = DIVIDE([Total Booking],CALCULATE([Total Booking],ALL(dim_rooms[room_class])))
-  		-Cancellation % = DIVIDE([Total cancelled bookings],[Total Booking])
-  		-DBRN = DIVIDE([Total Booking],[No of Days])
-  		-DSRN = DIVIDE([Total Capacity],[No of Days])
-  		-DURN = DIVIDE([Total Checked out],[No of Days])
-  		-No of Days = DATEDIFF(MIN(dim_date[date]),MAX(dim_date[date]),DAY)+1
-  		-No Show % = DIVIDE([Total No show],[Total Booking])
-  		-Occupancy % = DIVIDE([Total Successful bookings],[Total Capacity],0)
-  		-Realisation % = 1-([Cancellation %]+[No Show %])
-  		-Revenue = SUM(fact_bookings[revenue_realized])
-  		-RevPAR = DIVIDE([Revenue],[Total Capacity])
-  		-Revpar WoW change % = 
-			Var selv = IF(HASONEFILTER(dim_date[wn]),SELECTEDVALUE(dim_date[wn]),MAX(dim_date[wn]))
-			var revcw = CALCULATE([RevPAR],dim_date[wn]= selv)
-			var revpw =  CALCULATE([RevPAR],FILTER(ALL(dim_date),dim_date[wn]= selv-1))
-			
-			return
-			
-			
-			DIVIDE(revcw,revpw,0)-1
-  		-Total Booking = COUNT(fact_bookings[booking_id])
-  		-Total cancelled bookings = CALCULATE([Total Booking],fact_bookings[booking_status]="Cancelled")+0
-  		-Total Capacity = SUM(fact_aggregated_bookings[capacity])
-  		-Total Checked out = CALCULATE([Total Booking],fact_bookings[booking_status]="Checked out")
-  		-Total No show = CALCULATE([Total Booking],fact_bookings[booking_status]="No show")+0
-  		-Total Successful bookings = SUM(fact_aggregated_bookings[successful_bookings])
+## Cleaning & Transformation:
+
+- Removed nulls and duplicates
+- Grouped salary into ranges (e.g., Upto 5K, 5K–10K, etc.)
+- Mapped age into age groups (e.g., 18–25, 26–35, etc.)
+- Used Power BI DAX for calculated metrics like Attrition Rate, Average Tenure, etc.
 
 
 ## Report Snapshot (Power BI Desktop)
