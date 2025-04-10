@@ -16,10 +16,9 @@ The goal of this dashboard is to:
 ## Demo of the dashboard:
 
 ### Level 1: 
-Slicers and date filters are given using which we can filter the visuals based on
+Slicers are given using which we can filter the visuals based on
 
 	- Department
-	- Gender	
 
 ### Level 2: 
 Card visuals, column charts, pie charts, and line charts are used to show detailed trends.
