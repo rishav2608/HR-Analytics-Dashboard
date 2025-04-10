@@ -63,7 +63,7 @@ The Table visual displays attrition rates segmented by job role and job satisfac
 
 ## Report Snapshot (Power BI Desktop)
  
-  ![Snap_Percentage](https://github.com/user-attachments/assets/b7cd9452-24ee-42ee-a587-470f17e351fb)
+ ![Dashboard Preview](Dashoard_Snapshot.png)
 
 
 - Snap of slicers used, through which the user can filter the report.
