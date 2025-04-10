@@ -63,54 +63,43 @@ The Table visual displays attrition rates segmented by job role and job satisfac
 
 ## Report Snapshot (Power BI Desktop)
  
- ![Dashboard Preview](Dashoard_Snapshot.png)
-
+![Dashboard Preview](Dashoard_Snapshot.png)
 
 - Snap of slicers used, through which the user can filter the report.
 
-   ![Snap_Percentage](https://github.com/user-attachments/assets/903d019d-0029-43ea-b005-c0e21ebef49d)
+![Snap_Percentage](Slicers.png)
 
-- Snap of date filters used, through which the user can filter the report.
+- Card visuals represented the Count of Employee, Attrition, Attrition Rate, Average Age, etc.
 
-   ![Snap_Percentage](https://github.com/user-attachments/assets/9761135c-8667-4ca3-975c-01ea1472f24e)
+![Snap_Percentage](Cards_visuals.png)
 
+- Shows which age brackets experience the highest attrition.
 
-- Card visuals represented the Revenue, RevPAR, DSRN, Occupancy %, etc.
+![Snap_Percentage](Atrrition_By_AgeGroup.png)
 
-  ![Snap_Count](https://github.com/user-attachments/assets/915a1108-4bde-4be0-9b09-3fb584fe3465)
+- The Table visual displays attrition rates segmented by job role and job satisfaction levels, helping to identify patterns between employee satisfaction and turnover.        
 
- 
-- A column chart was used to represent the Realisation % vs ADR by booking platform.
+![Snap_Percentage](Atrrition_By_JobRole&JobSatisfaction.png) 
 
-  ![Snap_Count](https://github.com/user-attachments/assets/084beabf-a408-4a62-87f0-18d8f013c4c0) 
+- Helps understand if low pay correlates with higher attrition.
 
+![Snap_Percentage](Atrrition_By_Salary.png)
 
-- A line chart was used to represent the trends by key matrix like RevPAR, ADR, and Occupancy for every week.               
+- Gender-wise attrition trend.
 
-  ![Snap_Count](https://github.com/user-attachments/assets/e75dbd07-f853-4ec6-ab1c-a989f7745f64) 
+![Snap_Percentage](Atrrition_By_Gender.png)
 
+- Insights into how tenure affects attrition.
 
-- A pie chart represents the revenue by room category (Luxury or Business).
-
-  ![Snap_Count](https://github.com/user-attachments/assets/95f65d95-25b8-49c4-88f9-2c4c7811db45) 
-
-
-- A Table chart was used to represent booking and revenue details based on weekdays and weekends.
-
-  ![Snap_Count](https://github.com/user-attachments/assets/41c7ff49-ed73-4a73-80e5-b8cab601b068)
-
-
-- Another Table chart was used to represent each property detail which is useful to make decisions based on property.
-
-  ![Snap_Count](https://github.com/user-attachments/assets/9c6b01ce-e0a1-499b-a27f-c224e635f972)
-
+![Snap_Percentage](Atrrition_By_YearsAtCompany.png)
 
 
 ## Analysis and Result:
 
-By analyzing the data it was found that we have to take the following steps:
+The HR Analytics Dashboard reveals critical insights into employee attrition patterns across job roles, age groups, education backgrounds, and salary brackets. With an overall attrition rate of 16.1%, the analysis highlights that:
 
-	- By analyzing the dashboard we can have an idea of demand and supply of rooms and make the prices dynamic accordingly.
-	- Different promotions and coupons should be applied on various channels.
-	- We can check the property details and occupancy % for each property and make changes to grab more bookings.
-	- For each hotel, we can get the idea that it's using flat or dynamic pricing based on weekdays and weekends.
+	- Young professionals aged 26–35 show the highest attrition, indicating possible career transitions or job dissatisfaction at early stages.
+	- Life Sciences and Medical education backgrounds have the highest number of employees leaving, possibly reflecting industry trends or role mismatches.
+	- Low salary bands (Upto ₹5K) have significantly higher attrition, confirming a strong correlation between compensation and turnover.
+	- Roles such as Laboratory Technician, Sales Executive, and Research Scientist see the most attrition, indicating potential issues in job satisfaction and workload.
+ 	- The Table visual cross-analyzing job roles with job satisfaction scores shows that low satisfaction levels directly contribute to higher attrition.
